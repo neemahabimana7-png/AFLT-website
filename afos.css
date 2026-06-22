@@ -68,7 +68,7 @@
 }
 
 .afos-ops-carousel {
-    box-shadow: 0 16px 50px rgba(0, 153, 112, 0.18);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0);
     border-radius: 16px;
 }
 
@@ -572,6 +572,204 @@
     display: none;
 }
 
+/* OPERATION AREA SECTION */
+
+.operation-area-section {
+    padding: 50px 0;
+    background:url("https://static.wixstatic.com/media/6a77e1_efcb0548d58548d89569f27a32a78eb3~mv2.png/v1/fill/w_723,h_291,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Loc.png") center/cover no-repeat;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    box-shadow: inset 0 16px 30px rgba(0, 0, 0, 0.2), inset 0 -16px 30px rgba(0, 0, 0, 0.16);
+}
+
+.operation-area-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.22);
+    z-index: 0;
+}
+
+.operation-area-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.operation-image-title {
+    font-family: Tahoma, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0b74c9;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    width: fit-content;
+    padding: 7px 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(11, 116, 201, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: titleFloatIn 0.8s ease-out both;
+}
+
+.operation-image-slot {
+    min-height: 260px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border-radius: 18px;
+    border: 2px dashed rgba(11, 116, 201, 0.45);
+    background: rgba(11, 116, 201, 0.1);
+    box-shadow: 0 16px 34px rgba(11, 116, 201, 0.2), 0 12px 24px rgba(0, 0, 0, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: liftInLeft 0.7s ease-out both;
+}
+
+.operation-image-slot span {
+    font-family: Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0b74c9;
+    letter-spacing: 0.4px;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.operation-image-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    border: 2px solid rgba(255, 255, 255, 0.88);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    transition: transform 0.45s ease;
+}
+
+.operation-image-slot:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 36px rgba(11, 116, 201, 0.24), 0 14px 26px rgba(0, 0, 0, 0.25);
+}
+
+.operation-image-slot:hover img {
+    transform: scale(1.03);
+}
+
+.operation-card {
+    background: rgba(255, 255, 255, 0.93);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 20px 22px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease, transform 0.35s ease;
+    width: 500px;
+    min-height: 260px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    animation: liftInRight 0.75s ease-out both;
+    animation-delay: 0.08s;
+    
+}
+
+.operation-card h3 {
+    font-family: Tahoma, sans-serif;
+    color: #0b74c9;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.operation-card p {
+    font-family: Tahoma, sans-serif;
+    color: #101010;
+    font-size: 1rem;
+    line-height: 1.60;
+    margin-bottom: 14px;
+}
+
+.operation-card p:last-child {
+    margin-bottom: 0;
+}
+
+.operation-card:hover,
+.operation-card:active {
+    background: #0b74c9;
+    border-color: #0b74c9;
+    transform: translateY(-4px);
+}
+
+@keyframes liftInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-22px) translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes liftInRight {
+    from {
+        opacity: 0;
+        transform: translateX(22px) translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes titleFloatIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .operation-image-title,
+    .operation-image-slot,
+    .operation-card {
+        animation: none;
+    }
+
+    .operation-image-slot,
+    .operation-image-slot img,
+    .operation-card {
+        transition: none;
+    }
+}
+
+.operation-card:hover h3,
+.operation-card:hover p,
+.operation-card:hover strong,
+.operation-card:active h3,
+.operation-card:active p,
+.operation-card:active strong {
+    color: #ffffff;
+}
+
 /* RESPONSIVE - Core Activities */
 
 @media (max-width: 992px) {
@@ -602,6 +800,35 @@
 }
 
 @media (max-width: 768px) {
+    .operation-area-section {
+        padding: 28px 0;
+    }
+
+    .operation-image-title {
+        font-size: 1.35rem;
+        padding: 8px 14px;
+        top: 10px;
+    }
+
+    .operation-image-slot {
+        min-height: 200px;
+    }
+
+    .operation-card {
+        padding: 16px 14px;
+        min-height: 200px;
+    }
+
+    .operation-card h3 {
+        font-size: 1.35rem;
+        margin-bottom: 12px;
+    }
+
+    .operation-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
     .activities-header {
         padding-right: 0;
         margin-bottom: 12px;
@@ -641,6 +868,40 @@
 }
 
 @media (max-width: 576px) {
+    .operation-area-section {
+        padding: 22px 0;
+    }
+
+    .operation-image-title {
+        font-size: 1.05rem;
+        padding: 6px 10px;
+        top: 8px;
+    }
+
+    .operation-image-slot {
+        min-height: 170px;
+        border-radius: 14px;
+    }
+
+    .operation-image-slot span {
+        font-size: 0.9rem;
+    }
+
+    .operation-card {
+        padding: 12px 10px;
+        border-radius: 12px;
+        min-height: 170px;
+    }
+
+    .operation-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .operation-card p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
     .core-activities-section {
         padding: 12px 0;
     }
