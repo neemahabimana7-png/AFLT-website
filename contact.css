@@ -1,0 +1,350 @@
+/* Contact Page Section */
+.contact-page-section {
+    padding: 40px 0 45px;
+    background: #ffffff;
+}
+
+/* Title Section */
+.contact-title-section {
+    margin-bottom: 35px;
+}
+
+.services-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.services-tag::before,
+.services-tag::after {
+    content: '';
+    width: 35px;
+    height: 2px;
+    background: #009970;
+}
+
+.services-tag-text {
+    font-family: Tahoma, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #009970;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.contact-main-title {
+    font-family: Tahoma, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #071734;
+    line-height: 1.2;
+}
+
+.highlight-text {
+    color: #009970;
+}
+
+.contact-subtitle {
+    font-family: Tahoma, sans-serif;
+    font-size: 1.05rem;
+    color: #666;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mb-60 {
+    margin-bottom: 35px;
+}
+
+.contact-wrapper {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Left Column - Contact Info */
+.contact-info-card {
+    background: linear-gradient(135deg, rgba(0,122,88,0.9) 0%, rgba(0,74,42,0.9) 100%);
+    padding: 35px 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info-title {
+    font-family: Tahoma, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.contact-info-text {
+    font-family: Tahoma, sans-serif;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    margin-bottom: 35px;
+}
+
+.contact-detail-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 18px;
+    align-items: center;
+}
+
+.contact-detail-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-detail-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.contact-detail-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-detail-label {
+    font-family: Tahoma, sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 3px;
+}
+
+.contact-detail-value {
+    font-family: Tahoma, sans-serif;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+/* Business Hours Card */
+.business-hours-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: auto;
+}
+
+.business-hours-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Tahoma, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.business-hours-title svg {
+    width: 24px;
+    height: 24px;
+}
+
+.business-hours-list {
+    margin-bottom: 18px;
+}
+
+.business-hours-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.business-hours-item span:first-child {
+    font-family: Tahoma, sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.business-hours-item span:last-child {
+    font-family: Tahoma, sans-serif;
+    font-size: 0.95rem;
+    color: white;
+    font-weight: 500;
+}
+
+.business-hours-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Tahoma, sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.business-hours-note svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Right Column - Contact Form */
+.contact-form-card {
+    background: white;
+    padding: 35px 35px;
+    height: 100%;
+}
+
+.contact-form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    display: block;
+    font-family: Tahoma, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #071734;
+    margin-bottom: 8px;
+}
+
+.required {
+    color: #009970;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-family: Tahoma, sans-serif;
+    font-size: 1rem;
+    color: #071734;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #009970;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(0, 153, 112, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.form-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px 30px;
+    background: #007a58;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: Tahoma, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.form-submit-btn:hover {
+    background: #005a3a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 90, 58, 0.3);
+}
+
+.form-submit-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.form-disclaimer {
+    font-family: Tahoma, sans-serif;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 18px;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 1199px) {
+    .contact-main-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-page-section {
+        padding: 70px 0 60px;
+    }
+
+    .contact-info-card,
+    .contact-form-card {
+        padding: 40px 30px;
+    }
+
+    .contact-main-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page-section {
+        padding: 60px 0 50px;
+    }
+
+    .contact-info-card {
+        padding: 35px 25px;
+    }
+
+    .contact-form-card {
+        padding: 35px 25px;
+    }
+
+    .contact-info-title {
+        font-size: 1.7rem;
+    }
+
+    .contact-main-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info-card,
+    .contact-form-card {
+        padding: 30px 20px;
+    }
+
+    .contact-main-title {
+        font-size: 1.6rem;
+    }
+}
