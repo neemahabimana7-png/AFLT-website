@@ -1,0 +1,243 @@
+/* Services Hero Section */
+.services-hero {
+    position: relative;
+    width: 100%;
+    min-height: 55vh;
+    background-image: url('https://static.wixstatic.com/media/6a77e1_8e4ffbccc12b4616bb923da3205c6f4d~mv2.jpg/v1/fill/w_1500,h_440,al_c,q_85,enc_avif,quality_auto/6a77e1_8e4ffbccc12b4616bb923da3205c6f4d~mv2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 120px; /* Adjust for navbar height */
+}
+
+.services-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.services-hero .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+
+
+.services-hero-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.9rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: bold;
+    
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .services-hero-title {
+        font-size: 2.8rem;
+    }
+    .services-hero-text {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero {
+        min-height: 60vh;
+    }
+    .services-hero-title {
+        font-size: 2.2rem;
+    }
+    .services-hero-text {
+        font-size: 1.05rem;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .services-hero-title {
+        font-size: 1.9rem;
+    }
+    .services-hero-text {
+        font-size: 1rem;
+    }
+}
+
+/* Our Services Section */
+.our-services-section {
+    padding: 50px 0;
+    background: #fff;
+}
+
+.services-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #009970;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+}
+
+.services-tag::before,
+.services-tag::after {
+    content: '';
+    width: 40px;
+    height: 2px;
+    background: #009970;
+}
+
+.services-section-title {
+    font-family: Tahoma, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: black;
+    margin-top: 15px;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 50px 35px;
+    text-align: left;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid #eee;
+    min-height: 620px;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.service-card .service-icon-wrapper {
+    margin: 0 0 20px 0;
+}
+
+.service-card:hover {
+    background: #fff;
+    border-color: #009970;
+    border-width: 2px;
+}
+
+.service-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-icon {
+    width: 32px;
+    height: 32px;
+    stroke: #009970;
+    fill: #009970;
+    stroke-width: 2.5;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover .service-icon-wrapper {
+    background: transparent;
+    transform: scale(1.05);
+}
+
+.service-card:hover .service-icon {
+    stroke: #009970;
+    fill: #009970;
+}
+
+.service-card-title {
+    font-family: Tahoma, sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #071734;
+    margin-bottom: 18px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover .service-card-title {
+    color: #009970 !important;
+}
+
+.service-card-text {
+    font-family: Tahoma, sans-serif;
+    font-size: 0.98rem;
+    color: #666;
+    line-height: 1.75;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .our-services-section {
+        padding: 60px 0;
+    }
+    .services-section-title {
+        font-size: 2.3rem;
+    }
+    .service-card {
+        min-height: 550px;
+        height: 550px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section-title {
+        font-size: 2rem;
+    }
+    .service-card {
+        padding: 35px 25px;
+        min-height: auto;
+        height: auto;
+    }
+    .service-card-title {
+        font-size: 1.25rem;
+    }
+    .service-icon-wrapper {
+        width: 55px;
+        height: 55px;
+    }
+    .service-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .our-services-section {
+        padding: 45px 0;
+    }
+    .services-section-title {
+        font-size: 1.9rem;
+    }
+    .service-card {
+        padding: 30px 20px;
+    }
+    .service-icon-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+    .service-icon {
+        width: 26px;
+        height: 26px;
+    }
+}

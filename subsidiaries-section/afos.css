@@ -107,6 +107,7 @@
     overflow: hidden;
     border: 6px solid rgba(255, 255, 255, 0.95);
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+    animation: focusFloat 4.5s ease-in-out infinite;
 }
 
 .afos-visual-focus img {
@@ -133,6 +134,31 @@
 
 .afos-copy-block strong {
     font-weight: 800;
+}
+
+@keyframes focusFloat {
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-8px);
+    }
+}
+
+.afos-reveal {
+    transition: opacity 0.72s ease, transform 0.72s ease;
+    transition-delay: var(--afos-delay, 0ms);
+}
+
+.js-motion .afos-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+}
+
+.js-motion .afos-reveal.afos-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .afos-slide-img {
@@ -197,6 +223,21 @@
 .carousel-indicators .active {
     opacity: 1;
     width: 28px;
+}
+
+.hero-title-animate {
+    animation: heroRise 0.8s ease both;
+}
+
+@keyframes heroRise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {
@@ -748,6 +789,19 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .hero-title-animate,
+    .afos-visual-focus {
+        animation: none !important;
+    }
+
+    .afos-reveal,
+    .js-motion .afos-reveal,
+    .js-motion .afos-reveal.afos-visible {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
     .operation-image-title,
     .operation-image-slot,
     .operation-card {
