@@ -159,7 +159,6 @@ body {
 }
 
 .carousel-item{
-transition: transform 0.0s ease-in-out;
 position: relative;
 }
 .carousel-item img{
