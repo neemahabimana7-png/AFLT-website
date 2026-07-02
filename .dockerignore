@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*.sqlite3
+.env
+.env.*
+.venv/
+venv/
+.git/
+.gitignore
+.cursor/
+agent-transcripts/
+*.md
+!README.md
+
+# Original static HTML site (not used by Django runtime)
+navbar/
+service-section/
+subsidiaries-section/
+
+# Local uploads and build output (use Coolify persistent storage for media)
+media/
+staticfiles/
+db.sqlite3
+
+# IDE and OS files
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini
