@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Services | AFRILOTT Holding Ltd{% endblock %}
+{% block meta_description %}Explore AFRILOTT services — procurement and supply chain, general trading and logistics, and digital solutions.{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/pages/services.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="services-hero">
+  <div class="services-hero-overlay">
+    <p class="services-hero-text">Our Services</p>
+  </div>
+</section>
+
+<section class="our-services-section">
+  <div class="container">
+    <div class="section-header text-center mb-5" data-aos="fade-up">
+      <div class="services-tag mb-3">What We Do</div>
+      <h2 class="services-section-title">Our Services</h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      {% if use_database %}
+        {% for category in categories %}
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{% widthratio forloop.counter0 1 100 %}">
+          <div class="service-card h-100">
+            <div class="service-icon-wrapper">
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {% if category.slug == 'procurement-supply-chain' %}
+                <path d="M6 5h12v14H6z" stroke="currentColor" stroke-width="2"/>
+                <path d="M9 3h6v4H9z" stroke="currentColor" stroke-width="2"/>
+                <path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                {% elif category.slug == 'general-trading-logistics' %}
+                <path d="M3 7h11v8H3z" stroke="currentColor" stroke-width="2"/>
+                <path d="M14 10h4l3 3v2h-7z" stroke="currentColor" stroke-width="2"/>
+                <circle cx="7" cy="17" r="2" stroke="currentColor" stroke-width="2"/>
+                <circle cx="17" cy="17" r="2" stroke="currentColor" stroke-width="2"/>
+                {% else %}
+                <rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 16v4" stroke="currentColor" stroke-width="2"/>
+                {% endif %}
+              </svg>
+            </div>
+            <h3 class="service-card-title">{{ category.name }}</h3>
+            <p class="service-card-text">{{ category.short_description }}</p>
+            <a href="{% url 'services:category_detail' category_slug=category.slug %}" class="btn btn-success mt-auto align-self-start">Learn More</a>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-card h-100">
+            <div class="service-icon-wrapper">
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 5h12v14H6z" stroke="currentColor" stroke-width="2"/>
+                <path d="M9 3h6v4H9z" stroke="currentColor" stroke-width="2"/>
+                <path d="M9 12h6M9 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title">Procurement &amp; Supply Chain Management</h3>
+            <p class="service-card-text">End-to-end procurement and supply chain solutions for governments, corporations, NGOs, and large-scale projects across Africa.</p>
+            <a href="{% url 'services:category_detail' category_slug='procurement-supply-chain' %}" class="btn btn-success mt-auto align-self-start">Learn More</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card h-100">
+            <div class="service-icon-wrapper">
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 7h11v8H3z" stroke="currentColor" stroke-width="2"/>
+                <path d="M14 10h4l3 3v2h-7z" stroke="currentColor" stroke-width="2"/>
+                <circle cx="7" cy="17" r="2" stroke="currentColor" stroke-width="2"/>
+                <circle cx="17" cy="17" r="2" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title">General Trading &amp; Logistics</h3>
+            <p class="service-card-text">Commodity trading, freight, warehousing, customs clearance, and inland transportation for reliable regional and global delivery.</p>
+            <a href="{% url 'services:category_detail' category_slug='general-trading-logistics' %}" class="btn btn-success mt-auto align-self-start">Learn More</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card h-100">
+            <div class="service-icon-wrapper">
+              <svg class="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 16v4" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title">Digital Solutions</h3>
+            <p class="service-card-text">IT infrastructure, networking, software, hardware, CCTV, and data solutions to support modern business operations.</p>
+            <a href="{% url 'services:category_detail' category_slug='digital-solutions' %}" class="btn btn-success mt-auto align-self-start">Learn More</a>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

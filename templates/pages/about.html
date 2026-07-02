@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About | AFRILOTT Holding Ltd{% endblock %}
+{% block meta_description %}Learn about AFRILOTT Holding Ltd — our journey, mission, vision, and leadership team.{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/pages/about.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<!-- Who We Are Section -->
+<section class="who-we-are-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="who-tag"><span class="who-line"></span>ABOUT US</div>
+        <h1 class="who-heading">Efficiency<br>in motion.<br>Delivering<br>Your success.</h1>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <img src="https://static.wixstatic.com/media/6a77e1_c93782636c2c4351bef73e6857ab5690~mv2.jpg/v1/fill/w_1800,h_832,al_c,q_85,enc_avif,quality_auto/6a77e1_c93782636c2c4351bef73e6857ab5690~mv2.jpg" alt="who we are" class="img-fluid who-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- History and Strategy Section -->
+<section class="history-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7" data-aos="fade-right">
+        <h2 class="history-heading">Our Journey</h2>
+        <p class="history-text">AFRILOTT Holding Ltd was established in 2010. It is specialized in commodity trading, procurement and logistics (goods and equipment), supply chain management, and IT solutions.​ With our expertise and industry knowledge, we are dedicated to meeting the unique needs of businesses and organizations requiring top-quality equipment for various applications.</p>
+        <p class="history-text">Our core business focus is to provide local, value-added products and services that meet the needs of our clients through the construction and operation of large-scale manufacturing facilities in Nigeria and across Africa. We are focused on building local manufacturing capacity to generate employment, reduce capital flight and increase local value addition.</p>
+        <a href="{% url 'services:index' %}" class="history-btn">Our Businesses &rarr;</a>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left">
+        <div class="history-card">
+          <div class="history-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 20V4H20V20H4Z" stroke="white" stroke-width="1.5"/>
+              <path d="M7 7H10V10H7V7Z" fill="white"/>
+              <path d="M14 7H17V10H14V7Z" fill="white"/>
+              <path d="M7 12H10V15H7V12Z" fill="white"/>
+              <path d="M14 12H17V15H14V12Z" fill="white"/>
+              <path d="M7 17H10V20H7V17Z" fill="white"/>
+              <path d="M14 17H17V20H14V17Z" fill="white"/>
+              <path d="M10 4V20H14V4H10Z" fill="white"/>
+            </svg>
+          </div>
+          <div class="history-slider">
+            <h3 class="history-card-title active">Industries — Commodity Trading, Procurement, Logistics, Supply Chain, IT Solutions.</h3>
+            <h3 class="history-card-title">Since 2010: 14+ years of excellence.</h3>
+            <h3 class="history-card-title">100+ satisfied clients worldwide.</h3>
+            <h3 class="history-card-title">Global network across 20+ countries.</h3>
+          </div>
+          <div class="history-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="mission-vision-section">
+  <div class="container">
+    <div class="section-header text-center mb-5" data-aos="fade-up">
+      <div class="mission-tag mb-3">OUR VALUES</div>
+      <h2 class="section-title">Mission &amp; Vision</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="mission-card">
+          <div class="mission-icon-wrapper">
+            <svg class="mission-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L4 7V17L12 22L20 17V7L12 2Z" stroke-width="2"/>
+              <path d="M12 22V12" stroke-width="2"/>
+              <path d="M4 7L12 12L20 7" stroke-width="2"/>
+              <path d="M7 3L17 3" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="mission-title">Our Mission</h3>
+          <p class="mission-text">Our mission is to provide exceptional trading and logistics solutions that optimize supply chains, enhance global connectivity, and drive business growth.</p>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="mission-card">
+          <div class="mission-icon-wrapper">
+            <svg class="mission-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3C12 3 7 7 7 12C7 14.5 9 17 12 17C15 17 17 14.5 17 12C17 7 12 3 12 3Z" stroke-width="2"/>
+              <circle cx="12" cy="12" r="1" fill="white"/>
+              <path d="M2 12H4" stroke-width="2"/>
+              <path d="M20 12H22" stroke-width="2"/>
+              <path d="M12 2V4" stroke-width="2"/>
+              <path d="M12 20V22" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="mission-title">Our Vision</h3>
+          <p class="mission-text">Transforming African trade through seamless sourcing, logistics, and strategic partnerships. Empowering communities to reach new horizons.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Team Section -->
+<section class="team-section">
+  <div class="container">
+    <div class="team-header text-center mb-5" data-aos="fade-up">
+      <div class="team-tag mb-3">OUR PEOPLE</div>
+      <h2 class="team-title">Meet Our Team</h2>
+      <p class="team-description">Meet our dedicated and dynamic corporate team, the backbone of our company's success. With a diverse range of expertise and a shared commitment to excellence, our team is poised to tackle any challenge that comes our way.</p>
+    </div>
+
+    <div class="row justify-content-center">
+      {% if use_database_team %}
+        {% for member in team_members|slice:":2" %}
+        <div class="col-auto" data-aos="zoom-in" data-aos-delay="{% widthratio forloop.counter0 1 100 %}">
+          <div class="team-card">
+            <div class="team-image-wrapper">
+              {% if member.photo %}
+              <img src="{{ member.photo.url }}" alt="{{ member.name }} - {{ member.role }}" class="team-image">
+              {% else %}
+              <img src="{{ member.fallback_photo }}" alt="{{ member.name }} - {{ member.role }}" class="team-image">
+              {% endif %}
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">{{ member.name }}</h3>
+              <p class="team-role">{{ member.role }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+      <div class="col-auto" data-aos="zoom-in" data-aos-delay="0">
+        <div class="team-card">
+          <div class="team-image-wrapper">
+            <img src="https://static.wixstatic.com/media/6a77e1_0771cd6c774c48829e6ddc154a5db786~mv2.jpg/v1/fill/w_411,h_413,al_c,lg_1,q_80,enc_avif,quality_auto/ferdyturasengan.jpg" alt="Ferdy TURASENGA - Executive Chairman" class="team-image">
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Ferdy TURASENGA</h3>
+            <p class="team-role">Executive Chairman</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto" data-aos="zoom-in" data-aos-delay="100">
+        <div class="team-card">
+          <div class="team-image-wrapper">
+            <img src="https://static.wixstatic.com/media/6a77e1_56d00763147948fd9cbce5e6aa2aa694~mv2.jpg/v1/fill/w_536,h_538,al_c,lg_1,q_80,enc_avif,quality_auto/EugeneMBONY.jpg" alt="Eugene MBONYINSHUTI - Managing Director" class="team-image">
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Eugene MBONYINSHUTI</h3>
+            <p class="team-role">Managing Director</p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      {% if use_database_team %}
+        {% for member in team_members|slice:"2:" %}
+        <div class="col-auto" data-aos="zoom-in" data-aos-delay="{% if forloop.counter == 1 %}200{% elif forloop.counter == 2 %}300{% else %}400{% endif %}">
+          <div class="team-card">
+            <div class="team-image-wrapper">
+              {% if member.photo %}
+              <img src="{{ member.photo.url }}" alt="{{ member.name }} - {{ member.role }}" class="team-image">
+              {% else %}
+              <img src="{{ member.fallback_photo }}" alt="{{ member.name }} - {{ member.role }}" class="team-image">
+              {% endif %}
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">{{ member.name }}</h3>
+              <p class="team-role">{{ member.role }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+      <div class="col-auto" data-aos="zoom-in" data-aos-delay="200">
+        <div class="team-card">
+          <div class="team-image-wrapper">
+            <img src="https://static.wixstatic.com/media/6a77e1_e5e4cee3b7344687afedac953fa9f488~mv2.jpg/v1/fill/w_474,h_492,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/MauriceNGENGANYI.jpg" alt="Maurice NGENGANYI - Bidding and Aquisitions Manager" class="team-image">
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Maurice NGENGANYI</h3>
+            <p class="team-role">Bidding and Aquisitions Manager</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto" data-aos="zoom-in" data-aos-delay="300">
+        <div class="team-card">
+          <div class="team-image-wrapper">
+            <img src="https://static.wixstatic.com/media/6a77e1_fb892ae2070146baaf14595e3ebca3d3~mv2.jpg/v1/fill/w_474,h_492,al_c,lg_1,q_80,enc_avif,quality_auto/b.jpg" alt="Bruce MBANZABUGABO - Sales and Marketing Manager" class="team-image">
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Bruce MBANZABUGABO</h3>
+            <p class="team-role">Sales and Marketing Manager</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-auto" data-aos="zoom-in" data-aos-delay="400">
+        <div class="team-card">
+          <div class="team-image-wrapper">
+            <img src="https://static.wixstatic.com/media/6a77e1_eb903e06a7094222b5bc08b53fc2fe49~mv2.jpg/v1/fill/w_243,h_252,al_c,lg_1,q_80,enc_avif,quality_auto/017bebd7.jpg" alt="Alphonse MUGISHA - Project Analyst" class="team-image">
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Alphonse MUGISHA</h3>
+            <p class="team-role">Project Analyst</p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

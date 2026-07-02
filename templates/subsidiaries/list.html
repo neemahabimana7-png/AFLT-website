@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Subsidiaries | AFRILOTT Holding Ltd{% endblock %}
+
+{% block vendor_css %}{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/pages/subsidiaries.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<main>
+  <section class="subsidiary-hero">
+    <div class="container text-center">
+      <span class="subsidiary-kicker reveal-up">AFRILOTT Holding Ltd</span>
+      <h1 class="subsidiary-title reveal-up">Our Subsidiaries</h1>
+      <p class="subsidiary-subtitle reveal-up">
+        Three focused companies working as one ecosystem to deliver trade, logistics, and technology outcomes across Africa.
+      </p>
+    </div>
+  </section>
+
+  <section class="subsidiary-showcase">
+    <div class="container">
+      <div class="row g-4">
+        {% if use_database %}
+          {% for subsidiary in subsidiaries %}
+          <div class="col-md-6 col-lg-4">
+            <article class="subsidiary-card reveal-up" style="--delay: {% widthratio forloop.counter0 1 120 %}ms;">
+              <div class="subsidiary-card-image-wrap">
+                {% if subsidiary.cover_image %}
+                <img class="subsidiary-card-image" src="{{ subsidiary.cover_image.url }}" alt="{{ subsidiary.name }}">
+                {% else %}
+                <img class="subsidiary-card-image" src="{{ subsidiary.fallback_image }}" alt="{{ subsidiary.name }}">
+                {% endif %}
+              </div>
+              <div class="subsidiary-card-body">
+                <h2>{{ subsidiary.name }}</h2>
+                <p>{{ subsidiary.summary }}</p>
+                <a href="{{ subsidiary.get_absolute_url }}" class="subsidiary-link">Explore Company</a>
+              </div>
+            </article>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="col-md-6 col-lg-4">
+            <article class="subsidiary-card reveal-up" style="--delay: 0ms;">
+              <div class="subsidiary-card-image-wrap">
+                <img class="subsidiary-card-image" src="https://images.unsplash.com/photo-1565891741441-64926e441838?w=1200&q=80" alt="Fuel logistics operations">
+              </div>
+              <div class="subsidiary-card-body">
+                <h2>Afrilott Overseas LLC</h2>
+                <p>Specialized in petroleum sourcing, procurement, and regional distribution support.</p>
+                <a href="{% url 'subsidiaries:detail' slug='afrilott-overseas' %}" class="subsidiary-link">Explore Company</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="subsidiary-card reveal-up" style="--delay: 120ms;">
+              <div class="subsidiary-card-image-wrap">
+                <img class="subsidiary-card-image" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80" alt="Warehouse and supply chain network">
+              </div>
+              <div class="subsidiary-card-body">
+                <h2>TransTrade Africa</h2>
+                <p>Cross-border commodity flow, warehousing, and freight coordination for growth markets.</p>
+                <a href="{% url 'subsidiaries:detail' slug='transtrade-africa' %}" class="subsidiary-link">Explore Company</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="subsidiary-card reveal-up" style="--delay: 240ms;">
+              <div class="subsidiary-card-image-wrap">
+                <img class="subsidiary-card-image" src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80" alt="Technology and engineering workstation">
+              </div>
+              <div class="subsidiary-card-body">
+                <h2>Grittech Resources Ltd</h2>
+                <p>Industrial tools, technical solutions, and project support tailored for enterprise operations.</p>
+                <a href="{% url 'subsidiaries:detail' slug='grittech-resources' %}" class="subsidiary-link">Explore Company</a>
+              </div>
+            </article>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

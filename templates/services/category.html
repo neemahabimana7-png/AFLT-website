@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  {% if use_database %}{{ category.hero_title|default:category.name }}{% else %}{{ category_page.hero_title }}{% endif %}
+  | AFRILOTT Holding Ltd
+{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/pages/service-category.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="services-hero">
+  <div class="services-hero-overlay">
+    <div class="container">
+      <p class="services-hero-text">
+        {% if use_database %}{{ category.hero_title|default:category.name }}{% else %}{{ category_page.hero_title }}{% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="psm-title-section">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <div class="services-tag mb-3">What We Do</div>
+    </div>
+  </div>
+</section>
+
+<section class="psm-cards-section">
+  <div class="container">
+    <div class="row g-4">
+      {% if use_database %}
+        {% for card in service_cards %}
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ card.aos_delay }}">
+          <article class="psm-service-card">
+            <div class="psm-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                {{ card.icon_svg|safe }}
+              </svg>
+            </div>
+            <h3 class="psm-card-title">{{ card.title }}</h3>
+            <p class="psm-card-text">{{ card.text }}</p>
+            <a class="psm-card-link" href="{{ card.service.get_absolute_url }}">
+              Learn More <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+        </div>
+        {% endfor %}
+      {% else %}
+        {% for card in category_page.cards %}
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ card.aos_delay }}">
+          <article class="psm-service-card">
+            <div class="psm-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                {{ card.icon_svg|safe }}
+              </svg>
+            </div>
+            <h3 class="psm-card-title">{{ card.title }}</h3>
+            <p class="psm-card-text">{{ card.text }}</p>
+            <a class="psm-card-link" href="{% url 'services:service_detail' category_slug=category_slug service_slug=card.service_slug %}">
+              Learn More <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+        </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,180 @@
+{% load static %}
+
+<footer class="site-footer">
+
+  <div class="footer-inner container">
+
+    <div class="row gy-4 align-items-center">
+
+      <div class="col-lg-3 text-center text-lg-start">
+
+        <div class="footer-logo-wrap mb-3">
+
+          {% if site_settings and site_settings.logo %}
+
+          <img src="{{ site_settings.logo.url }}" alt="Afrilott logo" class="footer-logo-img">
+
+          {% else %}
+
+          <img src="{% static 'images/afrilott.png' %}" alt="Afrilott logo" class="footer-logo-img">
+
+          {% endif %}
+
+        </div>
+
+        <h5 class="footer-company-name">
+
+          {% if site_settings and site_settings.site_name %}{{ site_settings.site_name }}{% else %}AFRILOTT HOLDING LTD{% endif %}
+
+        </h5>
+
+        <p class="footer-company-tagline">Logistics, Trades &amp; Technologies</p>
+
+        <p class="footer-company-tagline">
+
+          {% if site_settings and site_settings.footer_text %}{{ site_settings.footer_text }}{% else %}Commodity trading, procurement, logistics, and IT solutions across Africa.{% endif %}
+
+        </p>
+
+      </div>
+
+
+
+      <div class="col-lg-3">
+
+        <h6 class="footer-title">Quick Links</h6>
+
+        <ul class="footer-links">
+
+          <li><a href="{% url 'pages:home' %}">Home</a></li>
+
+          <li><a href="{% url 'pages:about' %}">About Us</a></li>
+
+          <li><a href="{% url 'services:index' %}">Services</a></li>
+
+          <li><a href="{% url 'subsidiaries:list' %}">Subsidiaries</a></li>
+
+          {% if subsidiary_nav_items %}
+            {% for subsidiary in subsidiary_nav_items %}
+          <li><a href="{{ subsidiary.get_absolute_url }}">{{ subsidiary.name }}</a></li>
+            {% endfor %}
+          {% else %}
+          <li><a href="{% url 'subsidiaries:detail' slug='afrilott-overseas' %}">Afrilott Overseas LLC</a></li>
+          <li><a href="{% url 'subsidiaries:detail' slug='transtrade-africa' %}">TransTrade Africa</a></li>
+          <li><a href="{% url 'subsidiaries:detail' slug='grittech-resources' %}">Grittech Resources Ltd</a></li>
+          {% endif %}
+
+          <li><a href="{% url 'contact:form' %}">Contact Us</a></li>
+
+        </ul>
+
+      </div>
+
+
+
+      <div class="col-lg-3">
+
+        <h6 class="footer-title">Services</h6>
+
+        <ul class="footer-links">
+
+          <li>
+
+            <a href="{% url 'services:category_detail' category_slug='procurement-supply-chain' %}">
+
+              Procurement &amp; Supply Chain
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a href="{% url 'services:category_detail' category_slug='general-trading-logistics' %}">
+
+              General Trading &amp; Logistics
+
+            </a>
+
+          </li>
+
+          <li>
+
+            <a href="{% url 'services:category_detail' category_slug='digital-solutions' %}">
+
+              Digital Solutions
+
+            </a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <div class="col-lg-3">
+
+        <h6 class="footer-title">Contact</h6>
+
+        <div class="footer-contact">
+
+          <p>Office Address: {% if site_settings and site_settings.address %}{{ site_settings.address }}{% else %}Kigali, Rwanda{% endif %}</p>
+
+          <p>Phone: {% if site_settings and site_settings.phone_primary %}{{ site_settings.phone_primary }}{% else %}+250 788 358 601{% endif %}</p>
+
+          <p>Email: <a href="mailto:{% if site_settings and site_settings.email %}{{ site_settings.email }}{% else %}info@afrilott.com{% endif %}">{% if site_settings and site_settings.email %}{{ site_settings.email }}{% else %}info@afrilott.com{% endif %}</a></p>
+
+        </div>
+
+        <h6 class="footer-title mt-3">Follow Us</h6>
+
+        <div class="footer-legal-links">
+
+          {% if site_settings and site_settings.linkedin_url %}
+
+          <a href="{{ site_settings.linkedin_url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+          {% else %}
+
+          <a href="#" aria-label="LinkedIn placeholder">LinkedIn</a>
+
+          {% endif %}
+
+          {% if site_settings and site_settings.twitter_url %}
+
+          <a href="{{ site_settings.twitter_url }}" class="d-block" target="_blank" rel="noopener noreferrer">Twitter</a>
+
+          {% else %}
+
+          <a href="#" class="d-block" aria-label="Twitter placeholder">Twitter</a>
+
+          {% endif %}
+
+          {% if site_settings and site_settings.facebook_url %}
+
+          <a href="{{ site_settings.facebook_url }}" class="d-block" target="_blank" rel="noopener noreferrer">Facebook</a>
+
+          {% else %}
+
+          <a href="#" class="d-block" aria-label="Facebook placeholder">Facebook</a>
+
+          {% endif %}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom text-center mt-4">
+
+    <p>&copy; {% now "Y" %} AFRILOTT Holding Ltd. All Rights Reserved.</p>
+
+  </div>
+
+</footer>
+

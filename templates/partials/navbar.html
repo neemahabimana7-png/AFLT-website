@@ -1,0 +1,105 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-auto" href="{% url 'pages:home' %}">
+      <img src="{% static 'images/afrilott.png' %}" alt="Afrilott" height="100">
+    </a>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <a class="navbar-brand me-auto" href="{% url 'pages:home' %}">
+          <img src="{% static 'images/afrilott.png' %}" alt="Afrilott" height="80">
+        </a>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2{% if request.resolver_match.namespace == 'pages' and request.resolver_match.url_name == 'home' %} active{% endif %}"
+               {% if request.resolver_match.namespace == 'pages' and request.resolver_match.url_name == 'home' %}aria-current="page"{% endif %}
+               href="{% url 'pages:home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2{% if request.resolver_match.namespace == 'pages' and request.resolver_match.url_name == 'about' %} active{% endif %}"
+               href="{% url 'pages:about' %}">About us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link mx-lg-2 dropdown-toggle{% if request.resolver_match.namespace == 'services' %} active{% endif %}"
+               href="{% url 'services:index' %}"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">Services</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item{% if request.resolver_match.url_name == 'category_detail' and request.resolver_match.kwargs.category_slug == 'procurement-supply-chain' %} active{% endif %}"
+                   href="{% url 'services:category_detail' category_slug='procurement-supply-chain' %}">
+                  Procurement &amp; Supply Chain Management
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item{% if request.resolver_match.url_name == 'category_detail' and request.resolver_match.kwargs.category_slug == 'general-trading-logistics' %} active{% endif %}"
+                   href="{% url 'services:category_detail' category_slug='general-trading-logistics' %}">
+                  General Trading &amp; Logistics
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item{% if request.resolver_match.url_name == 'category_detail' and request.resolver_match.kwargs.category_slug == 'digital-solutions' %} active{% endif %}"
+                   href="{% url 'services:category_detail' category_slug='digital-solutions' %}">
+                  Digital Solutions
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link mx-lg-2 dropdown-toggle{% if request.resolver_match.namespace == 'subsidiaries' %} active{% endif %}"
+               href="{% url 'subsidiaries:list' %}"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">Subsidiaries</a>
+            <ul class="dropdown-menu">
+              {% if subsidiary_nav_items %}
+                {% for subsidiary in subsidiary_nav_items %}
+                <li>
+                  <a class="dropdown-item{% if request.resolver_match.namespace == 'subsidiaries' and request.resolver_match.kwargs.slug == subsidiary.slug %} active{% endif %}"
+                     href="{{ subsidiary.get_absolute_url }}">
+                    {{ subsidiary.name }}
+                  </a>
+                </li>
+                {% endfor %}
+              {% else %}
+              <li>
+                <a class="dropdown-item{% if request.resolver_match.namespace == 'subsidiaries' and request.resolver_match.kwargs.slug == 'afrilott-overseas' %} active{% endif %}"
+                   href="{% url 'subsidiaries:detail' slug='afrilott-overseas' %}">
+                  Afrilott Overseas LLC
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item{% if request.resolver_match.namespace == 'subsidiaries' and request.resolver_match.kwargs.slug == 'transtrade-africa' %} active{% endif %}"
+                   href="{% url 'subsidiaries:detail' slug='transtrade-africa' %}">
+                  TransTrade Africa
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item{% if request.resolver_match.namespace == 'subsidiaries' and request.resolver_match.kwargs.slug == 'grittech-resources' %} active{% endif %}"
+                   href="{% url 'subsidiaries:detail' slug='grittech-resources' %}">
+                  Grittech Resources Ltd
+                </a>
+              </li>
+              {% endif %}
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2{% if request.resolver_match.namespace == 'contact' %} active{% endif %}"
+               href="{% url 'contact:form' %}">Contact us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="{% url 'contact:form' %}" class="login-button">Let's talk</a>
+    <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>

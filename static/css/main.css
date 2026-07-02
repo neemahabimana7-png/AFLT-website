@@ -1,0 +1,23 @@
+/*
+ * AFRILOTT main stylesheet manifest (Phase 2).
+ *
+ * Load order for Django templates:
+ *   1. Vendor CSS (Bootstrap, AOS) via CDN in base.html
+ *   2. base.css — global layout, navbar, footer, shared sections
+ *   3. Page CSS from static/css/pages/ via {% block extra_css %}
+ *
+ * Source mapping:
+ *   base.css              <- navbar/style.css
+ *   pages/about.css       <- navbar/about.css
+ *   pages/services.css    <- navbar/service.css (services landing hero/cards)
+ *   pages/service-category.css <- service-section/psm.css (category listing pages)
+ *   pages/service-detail.css   <- service-section/service-generaltrading-details/servicepl.css
+ *   pages/contact.css     <- navbar/contact.css
+ *   pages/subsidiaries.css <- subsidiaries-section/subsidia.css
+ *   pages/subsidiary-detail.css <- subsidiaries-section/afos.css
+ *
+ * Home-specific sections (carousel, service cards, map) remain in base.css
+ * until a safe CSS split in a later phase.
+ */
+
+@import url("base.css");

@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact Us | AFRILOTT Holding Ltd{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/pages/contact.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="contact-page-section">
+  <div class="container">
+    <div class="contact-title-section text-center mb-60" data-aos="fade-up">
+      <div class="services-tag mb-4">
+        <span class="services-tag-text">GET IN TOUCH</span>
+      </div>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-xl-8">
+          <h2 class="contact-main-title">
+            <span class="highlight-text">Contact Us</span>
+          </h2>
+          <p class="contact-subtitle mt-4">Send us a message and we'll get back to you soon.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-11">
+        <div class="contact-wrapper" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-0">
+            <div class="col-lg-5">
+              <div class="contact-info-card">
+                <h2 class="contact-info-title">Let's Connect</h2>
+                <p class="contact-info-text">Have questions about our services or need a custom quote? Our team is ready to help you find the perfect procurement solutions.</p>
+
+                <div class="contact-details">
+                  <div class="contact-detail-item">
+                    <div class="contact-detail-icon">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" stroke-width="2"/>
+                        <path d="M22 6l-10 7L2 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="contact-detail-text">
+                      <span class="contact-detail-label">Email</span>
+                      <span class="contact-detail-value">afrilott@epcafrica.com</span>
+                    </div>
+                  </div>
+
+                  <div class="contact-detail-item">
+                    <div class="contact-detail-icon">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
+                        <path d="M12 2v4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 18v4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M4.93 4.93l2.83 2.83" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M16.24 16.24l2.83 2.83" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M2 12h4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M18 12h4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M4.93 19.07l2.83-2.83" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M16.24 7.76l2.83-2.83" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                    <div class="contact-detail-text">
+                      <span class="contact-detail-label">Website</span>
+                      <span class="contact-detail-value">www.afrilott.rw</span>
+                    </div>
+                  </div>
+
+                  <div class="contact-detail-item">
+                    <div class="contact-detail-icon">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z" stroke="white" stroke-width="2"/>
+                        <circle cx="12" cy="10" r="3" stroke="white" stroke-width="2"/>
+                      </svg>
+                    </div>
+                    <div class="contact-detail-text">
+                      <span class="contact-detail-label">Location</span>
+                      <span class="contact-detail-value">Kigali, Rwanda</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="business-hours-card">
+                  <div class="business-hours-title">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
+                      <path d="M12 6v6l4 2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Business Hours
+                  </div>
+                  <div class="business-hours-list">
+                    <div class="business-hours-item">
+                      <span>Monday - Friday</span>
+                      <span>8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="business-hours-item">
+                      <span>Saturday</span>
+                      <span>9:00 AM - 1:00 PM</span>
+                    </div>
+                  </div>
+                  <div class="business-hours-note">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#FFD700" stroke="none"/>
+                    </svg>
+                    24/7 Emergency Support Available
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="contact-form-card">
+                <form class="contact-form" action="#" method="post">
+                  <div class="row">
+                    <div class="col-12 mb-4">
+                      <label class="form-label" for="fullName">Full Name <span class="required">*</span></label>
+                      <input type="text" id="fullName" name="fullName" class="form-input" placeholder="full name" required>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12 mb-4">
+                      <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+                      <input type="email" id="email" name="email" class="form-input" placeholder="email@company.com" required>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <label class="form-label" for="company">Company</label>
+                      <input type="text" id="company" name="company" class="form-input" placeholder="Your Company">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <label class="form-label" for="phone">Phone Number</label>
+                      <input type="tel" id="phone" name="phone" class="form-input" placeholder="+250 XXX XXX XXX">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12 mb-4">
+                      <label class="form-label" for="message">Message <span class="required">*</span></label>
+                      <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project requirements..." required rows="5"></textarea>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="form-submit-btn">
+                    Send Message
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12h14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M12 5l7 7-7 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+
+                  <p class="form-disclaimer">By submitting this form, you agree to our privacy policy and terms of service.</p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
